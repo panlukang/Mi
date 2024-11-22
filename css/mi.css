@@ -1,14 +1,119 @@
+a:hover {
+    color: #ff6700
+}
+/* 顶部广告 */
 .header{
     width: 100%;
     height: 120px;
     overflow: hidden;
     position: relative;
 }
+/* 顶部广告图片 */
 .header img{
     height: 120px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
-
-
+/* 顶部黑色标签容器 */
+.container{
+    width: 1226px;
+    margin-right: auto;
+    margin-left: auto;
+}
+/* 顶部黑色标签 */
+.site-topbar{
+    position: relative;
+    z-index: 30;
+    height: 40px;
+    font-size: 12px;
+    color: #b0b0b0; 
+    background: #333;
+}
+/* 黑色标签字体 */
+.site-topbar a{
+    color: #b0b0b0;
+    line-height: 40px;
+    display: inline-block;
+}
+/* 黑色标签字体悬停变白 */
+.site-topbar a:hover {
+    color: #fff
+}
+/* 黑色标签间隔 */
+.site-topbar .sep{
+    margin: 0.3em;
+    color: #424242;
+}
+/* 黑色标签左部导航栏 */
+.site-topbar .topbar-nav{
+    float: left;
+    height: 40px;
+    line-height: 40px;  /*行距*/
+}
+/* 黑色标签右部登录栏 */
+.site-topbar .topbar-info{
+    position: relative;
+    float: right;
+    height: 40px;
+    line-height: 40px;
+}
+.site-topbar .topbar-info .link{
+    padding: 0 5px;
+    text-align: center;
+}
+.site-topbar .topbar-info .sep{
+    margin: 0;
+}
+.site-topbar .topbar-info .link,.site-topbar .topbar-info .message,.site-topbar .topbar-info .sep{
+    float: left;
+}
+.site-topbar .message{
+    padding: 0 10px;
+}
+/* 黑色标签右边购物车 */
+.site-topbar .topbar-cart{
+    position: relative;
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    width: 120px;
+    margin-left: 15px;
+    transition: all .2s;  /*过渡效果*/
+}
+/* 购物车标签样式 */
+.site-topbar .cart-mini{
+    position: relative;
+    z-index: 32;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #b0b0b0;
+    background: #424242;
+}
+/* 购物车悬停弹出标签样式 */
+.site-topbar .cart-menu{
+    position: absolute;
+    height: 0px;
+    right: 0;
+    top: 40px;
+    z-index: 31;
+    width: 316px;
+    color: #424242;
+    background: #fff;
+    box-shadow:  0 2px 10px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: height .3s;
+    line-height: 100px;
+    text-align: center;
+}
+/* 购物车hover1 */
+.topbar-cart:hover>a{
+    color: #ff6700;
+    background: #fff;
+}
+/* 购物车hover2 */
+.topbar-cart:hover>.cart-menu{
+    height: 100px;
+}
