@@ -136,7 +136,6 @@ a:hover {
     height: 100px;
 }
 .site-header .container{
-    position: relative;
     width: 1226px;
     margin-left: auto;
     margin-right: auto;
@@ -168,7 +167,6 @@ a:hover {
     width: 850px;
 }
 .site-header .nav-list{
-    position: relative;
     z-index: 10;
     float: left;
     width: 1100px;
@@ -184,7 +182,14 @@ a:hover {
     width: 127px;
     padding-right: 15px;
 }
-.site-header .nav-category a{
+.site-header .nav-category .link-category {
+    display: block;
+    padding: 26px 0 38px;
+    text-align: right;
+    color: #333;
+    visibility: hidden;
+}
+.site-header .nav-category.link{
     display: block;
     padding: 26px 0 38px;
     text-align: right;
@@ -201,6 +206,73 @@ a:hover {
 .site-header a:hover{
     color: #ff6700;
 }
+/* 白色导航栏--导航栏 下滑菜单*/
+.site-header .nav-item .item-children{
+    width: 100%;
+    height: 0px;
+    z-index: 24;
+    background: #fff;
+    border-top: 1px solid #eee;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.1);
+    position: absolute;
+    left: 0;
+    top: 100px;
+    overflow: hidden;
+    transition: box-shadow .2s, height .3s, -webkit-box-shadow .2s;
+    display: block;
+}
+.site-header .header-nav li:hover>.item-children{
+    height: 229px;
+}
+.site-header .nav-item .item-children a{
+    padding: 0;
+}
+.site-header .item-children .children-list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 12px;
+}
+.site-header .nav-item .children-list li{
+    position: relative;
+    float: left;
+    width: 180px;
+    padding: 35px 12px 0;
+    text-align: center;
+}
+.site-header .nav-item .children-list .first:before {
+    display: none
+}
+.site-header .nav-item .children-list li:before {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    z-index: 1;
+    width: 1px;
+    height: 100px;
+    content: "";
+    background-color: #e0e0e0
+}
+.site-header .nav-item .title{
+    margin: 0;
+    line-height: 20px;
+    color: #333;
+}
+.site-header .nav-item .price{
+    margin: 0;
+    line-height: 20px;
+    color: #ff6700;
+}
+.site-header .nav-item .figure{
+    width: 160px;
+    height: 110px;
+    margin: 0 auto 16px;
+    text-align: center;
+}
+.site-header .nav-item .figure img{
+    width: 160px;
+    height: 110px;
+}
 /* 白色导航栏--搜索栏 */
 .site-header .header-search{
     float: right;
@@ -213,11 +285,12 @@ a:hover {
     height: 50px;
     z-index: 20;
 }
-.site-header .search-text,.site-header .search-btn{
+.site-header .search-text,.site-header .iconfont-search-btn{
     position: absolute;
     top: 0;
     border: 1px solid #e0e0e0;
     outline: 0;
+    transition: all .2s;
 }
 .site-header .search-text{
     right: 51px;
@@ -228,7 +301,7 @@ a:hover {
     font-size: 14px;
     line-height: 48px;
 }
-.site-header .search-btn{
+.site-header .iconfont-search-btn{
     right: 0;
     z-index: 2;
     width: 52px;
@@ -238,9 +311,136 @@ a:hover {
     background: #fff;
     color: #616161;
 }
-.site-header .search-btn:hover {
+.site-header .iconfont-search-btn:hover {
     background: #ff6700;
     color: #fff
+}
+.iconfont-search-btn::after{
+    content: "\E624";
+    color: #616161;
+    position: absolute;
+    left: 10px;
+}
+/* 白色导航下左侧导航栏 */
+.site-category{
+    position: absolute;
+    top: 88px;
+    left: -92px;
+    z-index: 21;
+    width: 234px;
+    height: 460px;
+    font-size: 14px;
+}
+.site-category .site-category-list{
+    height: 420px;
+    border: 0;
+    color: #fff;
+    background: rgba(105,101,101,.6);
+    margin: 0;
+    padding: 20px 0;
+    list-style-type: none;
+}
+.site-header .site-category-list .title{
+    color:#fff;
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    height: 42px;
+    line-height: 42px;
+}
+.site-header .site-category-list .title:hover{
+    background: #ff6700;
+}
+.site-category-list .title em[class*=iconfont]{
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #e0e0e0;
+}
+.iconfont-arrow-right-big:before {
+    content: "\E623"
+}
+/* 白色导航下左侧导航栏滑动门 */
+.site-category-list .children-col-2{
+    display: none;
+}
+.site-category-list .category-item:hover>.children{
+    display: block;
+}
+.site-category-list .children{
+    position: absolute;
+    width: 530px;
+    left: 234px;
+    top: 0;
+    z-index: 24;
+    height: 458px;
+    border: 1px solid #e0e0e0;
+    border-left: 0;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+    overflow: hidden;
+}
+.site-category-list .children-list-col{
+    float: left;
+    width: 265px;
+}
+.site-category-list .children-list{
+    height: 458px;
+    margin: 0;
+    padding: 2px 0;
+    list-style-type: none;
+}
+.site-category-list .children-list li{
+    position: relative;
+    float: left;
+    width: 265px;
+    height: 76px;
+}
+.site-category-list .children-list a{
+    display: block;
+    padding: 18px 20px;
+    line-height: 40px;
+    color: #333;
+    transition: color .2s;
+}
+.site-category-list .children-list a:hover{
+    color: #ff6700;
+}
+.site-category-list .children-list .thumb{
+    float: left;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+.site-category-list .children-list .text{
+    float: left;
+    width: 172x;
+    line-height: 40px;
+    white-space: nowrap;  /*空白字符是否换行*/
+    text-overflow: ellipsis; /*文本溢出处理*/
+    overflow: hidden;
+}
+/* banner */
+.home-hero-container{
+    position: relative;
+    z-index: 10;
+}
+.home-hero{
+    position: relative;
+    margin-bottom: 26px;
+}
+.home-hero .img-container{
+    position: relative;
+    height: 460px;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0;
+}
+.home-hero .img-container img{
+    display: block;
+    width: 1226px;
+    height: 460px;
 }
 /* 自定义字体图标库 */
 @font-face {
