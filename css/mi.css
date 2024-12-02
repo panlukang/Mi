@@ -420,17 +420,69 @@ a:hover {
     position: relative;
     margin-bottom: 26px;
 }
-.home-hero .img-container{
+.home-hero .swiper{
     position: relative;
     height: 460px;
     overflow: hidden;
     margin: 0 auto;
     padding: 0;
 }
-.home-hero .img-container img{
+.home-hero .swiper img{
     display: block;
     width: 1226px;
     height: 460px;
+}
+/* 轮播图按钮 */
+.home-hero .swiper-pagination{
+    width: 400px;
+    left: auto;
+    right: 30px;
+    bottom: 20px;
+    text-align: right;
+    position: absolute;
+    z-index: 10;
+}
+.home-hero .swiper-pagination-bullet{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #fff;
+    border-color: hsla(0,0%,100%,.3);
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0,0,0,.4);
+    opacity: 1;
+    cursor: pointer;
+    margin: 0 2px;
+}
+.home-hero .swiper-pagination-bullet-active,.home-hero .swiper-pagination-bullet:hover{
+    background: hsla(0,0%,100%,.4);
+    border-color: rgba(0,0,0,.4)
+}
+.swiper-button-next,.swiper-button-prev{
+    position: absolute;
+    top: 50%;
+    width: 41px;
+    height: 69px;
+    margin-top: -35px;
+    z-index: 10;
+    cursor: pointer;
+    outline: none;
+}
+.swiper-button-prev{
+    left: 234px;
+    background: url("https://i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png") no-repeat -84px 50%;
+}
+.swiper-button-prev:hover{
+    background-position: 0 50%;
+}
+.swiper-button-next{
+    right: 0;
+    left: auto;
+    background: url("https://i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png") no-repeat -124px 50%;
+}
+.swiper-button-next:hover{
+    background-position: -42px 50%;
 }
 /* channel */
 .home-hero .home-hero-sub{
