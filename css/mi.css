@@ -1,3 +1,9 @@
+body {
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    color: #333;
+    background-color: #fff;
+    min-width: 1226px
+}
 a:hover {
     color: #ff6700
 }
@@ -709,6 +715,28 @@ a:hover {
     margin: 0 10px 10px;
     text-align: center;
     color: #ff6700
+}
+.xm-plain-box .box-hd .more .tab-list{
+    margin: 0;
+    padding: 16px 0 0;
+    list-style-type: none;
+    font-size: 16px;
+}
+.xm-plain-box .box-hd .more .tab-list li{
+    margin: 0 0 0 30px;
+    display: inline-block;
+    padding: 0;
+    color: #424242;
+    border-bottom: 2px solid rgba(0,0,0,0);
+    transition: border .3s;
+    cursor: pointer;
+}
+.xm-plain-box .box-hd .more .tab-list li.tab-active,.xm-plain-box .box-hd .more .tab-list li:hover {
+    color: #ff6700;
+    border-bottom: 2px solid #ff6700
+}
+.hide{
+    display: none;
 }
 /* 自定义字体图标库 */
 @font-face {

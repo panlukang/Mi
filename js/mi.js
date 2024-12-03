@@ -48,3 +48,18 @@ swiper.addEventListener('mouseleave', function () {
         next.click()
     }, 3000)
 })
+
+//tab切换
+const lis = document.querySelectorAll('.box-hd .tab-list li')
+console.log(lis)
+for (let i = 0; i < lis.length; i++) {
+    lis[i].addEventListener('mouseenter', function(){
+        document.querySelector('.box-hd .tab-list .tab-active').classList.remove('tab-active')
+        this.classList.add('tab-active')
+
+        document.querySelectorAll('.tab-box1 .span16 ul').forEach(element=>{
+            element.classList.add('hide')
+        })
+        document.querySelector(`.tab-box1 .span16 ul:nth-child(${i+1})`).classList.remove('hide')
+    })
+}
